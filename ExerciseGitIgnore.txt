@@ -1,0 +1,58 @@
+Tìm hiểu về Git Ignore:
+
+I. What (khái niệm):
+
+- Git ignore được hiểu là một tệp trong Git. Vai trò sử dụng để bỏ qua các tệp không muốn dùng hoặc không có nhu cầu theo dõi.
+
+- Thông qua git ignore, bạn có thể gán các tệp không cần nhận commit tạm thời. Đây là những file không đem lại tác dụng cho các nhà phát triển và dự án khác.
+
+II. Which (đối tượng thường được sử dụng):
+
+- Các file hệ thống.
+
+- Các file cấu hình.
+
+- Các phải phát sinh từ quá trình biên dịch.
+
+- Các tệp lưu trữ và tìm kiếm các module.
+
+- Tệp chứa văn bản và dữ liệu cá nhân.
+
+- Cơ sở dữ liệu database và các file lưu log.
+
+III. How (cách sử dụng):
+
+	1. Cách tạo:
+	
+	- Tạo 1 file có đuôi ".gitignore".
+	
+	- Sau đó ta sẽ liệt kê những tên file, folder trong project mà ta không muốn bị parse mỗi khi thao tác với git.
+	
+	2. Cú pháp:
+	
+	- Trong thư mục Git Ignore không tồn tại cú pháp trống bởi file nào cũng chứa phần trống. Vì thế, tác dụng của phần cách chỉ nhằm dễ đọc hơn.
+
+	- Khi cần add thêm chú thích vào cú pháp, bạn có thể dùng # để mở đầu bình luận đó.
+
+	- Dấu gạch chéo “/” được quy định đặt ở cuối cú pháp. Chỉ khi nhận dạng được dấu hiệu này, công cụ mới xác định đây là Gitignore. Nếu không, đó có thể được đọc là một file thường hoặc một symbolic link.
+
+	- Dấu chấm than “!” mang nghĩa là phủ định. Do vậy, nếu bạn thêm dấu này vào trước một file, tệp này sẽ không bị bỏ qua nữa. Ngược lại, file được add vào lại (Tuy nhiên, trường hợp ngoại trừ là nếu một folder lớn đã bị bỏ qua. Khi đó, dù bạn có điền chấm than vào thư mục con thì vẫn không được thêm trở lại).
+
+	- Hai dấu sao đúp “**” được dùng trong trường hợp không muốn hoặc không thể định rõ tên. Chẳng hạn, bạn sử dụng cú pháp **/abc, sẽ có hiệu lực với tất cả các file có chứa abc trong tên.
+	
+IV. Why (tại sao lại sử dụng):
+
+- Việc sử dụng git ignore giúp ta dọn dẹp file trở nên dễ dàng hơn cũng như tránh được tình trạng mình có thể bị miss một số thông tin quan trọng cần có trong repository.
+
+- Giúp ta quản lí được các file dễ dàng hơn mà không bị lẫn lộn giữa các file thừa và file hữu ích với nhau.
+
+V. Where (git ignore được đặt ở đâu):
+
+- file .gitignore được đặt trong thư mục gốc của dự án Git. 
+
+- Mỗi dự án có thể có một hoặc nhiều tệp .gitignore.
+
+VI. When (khi nào được dùng):
+
+- Tạo hoặc cập nhật tệp .gitignore khi một người thêm các folder hoặc file mới vào dự án và muốn Git bỏ qua những thứ không cần thiết.
+
